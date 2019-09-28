@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">self-help</string>
+    <string name="success_message">task successful</string>
 </resources>

@@ -6,13 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".doctor_add_post">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="119dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="78dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginStart="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/postButton"
+        app:layout_constraintEnd_toStartOf="@+id/clickToAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <EditText
+        android:id="@+id/postContent"
+        android:layout_width="278dp"
+        android:layout_height="115dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="90dp"
+        android:ems="10"
+        android:hint="Write something here..."
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="15" />
+
+    <Button
+        android:id="@+id/postButton"
+        android:layout_width="125dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginStart="130dp"
+        android:text="Post"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/clickToAdd"
+        android:layout_width="147dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="114dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="23dp"
+        android:text="choose image"
+        app:layout_constraintBottom_toTopOf="@+id/postButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/postImage" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="264dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/postButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
