@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -113,6 +114,7 @@ public class doctor_add_post extends AppCompatActivity {
                    // progressBar.setProgress(0);
                     Toast.makeText(doctor_add_post.this, R.string.success_message, Toast.LENGTH_SHORT).show();
                     Upload upload = new Upload(postContent.getText().toString(), taskSnapshot.getDownloadUrl().toString());
+                    upload.setUsername("janhavi");
                     String uploadID = databaseReference.push().getKey();
                     databaseReference.child(uploadID).setValue(upload);
                 }
@@ -124,9 +126,9 @@ public class doctor_add_post extends AppCompatActivity {
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    //double progress = 100.0 * (taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
-                    //progressBar.setProgress((int)progress);
-
+                    double progress = 100.0 * (taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+                    progressBar.setProgress((int)progress);
+                    Log.d("upload progress", "suceess");
                 }
             });
         }

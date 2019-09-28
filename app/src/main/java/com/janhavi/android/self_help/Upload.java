@@ -4,20 +4,32 @@ public class Upload {
     private String content;
     private String uri;
     private boolean imagePresent;
+    private String username;
 
     public Upload(){
         content = "";
         uri = "";
         imagePresent = true;
+        username = "janhavi";
     }
 
     public Upload(String content, String uri){
         if(uri.trim().equals("")){
             imagePresent = false;
         }
+        else
+            imagePresent = true;
 
         this.content= content;
         this.uri= uri;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public boolean isEmpty(String content){
@@ -26,6 +38,7 @@ public class Upload {
         }
         else
             return false;
+
     }
 
     public String getContent() {
