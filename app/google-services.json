@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "995487975756",
+    "firebase_url": "https://selfhelp-app.firebaseio.com",
+    "project_id": "selfhelp-app",
+    "storage_bucket": "selfhelp-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995487975756:android:16de98e9d4a220049be7e9",
+        "android_client_info": {
+          "package_name": "com.janhavi.android.self_help"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995487975756-47a2tmepvi77o10pdk5mnvrtp8ns6qjc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.janhavi.android.self_help",
+            "certificate_hash": "4e443776bf524c0dcffdbbbbde00095f835b63b0"
+          }
+        },
+        {
+          "client_id": "995487975756-bl5vl2kp3gvadn63cf7sh4r06jj5d27p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmZHgpUlvzWmP8I5IcMwK56Xd3WDEGAes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995487975756-bl5vl2kp3gvadn63cf7sh4r06jj5d27p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
