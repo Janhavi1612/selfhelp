@@ -4,9 +4,10 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Telephony;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -106,6 +108,7 @@ public class doctor_add_post extends AppCompatActivity {
 
     private void uploadPost(){
         if(imageUri!= null){
+
             StorageReference postReference = storageReference.child(System.currentTimeMillis()+"."+
             getFileExtension(imageUri));
             postReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -113,7 +116,7 @@ public class doctor_add_post extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                    // progressBar.setProgress(0);
                     Toast.makeText(doctor_add_post.this, R.string.success_message, Toast.LENGTH_SHORT).show();
-                    Upload upload = new Upload(postContent.getText().toString(), taskSnapshot.getDownloadUrl().toString());
+                    Upload upload = new Upload(postContent.getText().toString(), taskSnapshot.getUploadSessionUri().toString());
                     upload.setUsername("janhavi");
                     String uploadID = databaseReference.push().getKey();
                     databaseReference.child(uploadID).setValue(upload);
